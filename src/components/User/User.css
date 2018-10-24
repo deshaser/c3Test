@@ -1,0 +1,34 @@
+.user {
+  text-align: center;
+}
+
+.user__avatar {
+  height: 150px;
+  border-radius: 3px;
+}
+
+.user__login {
+  margin-top: 10px;
+  color: #000000;
+  font-size: 1.3rem;
+}
+
+.user__delete-button {
+  background-color: #bd6361;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.user__delete-button:hover {
+  background-color: #bd5757;
+}
+
+.user__delete-button:disabled {
+  background-color: rgba(189, 87, 87, 0.5);
+}

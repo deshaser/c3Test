@@ -4,7 +4,7 @@ import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
 import Layout from './components/Layout/Layout';
 import Users from './components/Users/Users';
-import User from './User';
+import User from './components/User/User';
 import NewUser from './NewUser';
 
 const client = new ApolloClient({
