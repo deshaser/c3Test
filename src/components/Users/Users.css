@@ -1,0 +1,17 @@
+.users {
+  list-style-type: none;
+  padding: 0;
+}
+
+.users__item {
+  margin: 15px 5px;
+}
+
+.users__item-link {
+  color: #424242;
+  text-decoration: none;
+}
+
+.users__item-link:hover {
+  color: #000000;
+}

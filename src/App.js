@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
-import Layout from './Layout';
-import Users from './Users';
+import Layout from './components/Layout/Layout';
+import Users from './components/Users/Users';
 import User from './User';
 import NewUser from './NewUser';
 

@@ -1,0 +1,21 @@
+.layout {
+  width: 890px;
+  margin: auto;
+}
+
+.navigation {
+  background: #e6e6e6;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 0 0 5px 5px;
+}
+
+.navigation__link {
+  color: #2f2f2f;
+  text-decoration: none;
+
+}
+
+.navigation__link:hover {
+  color: #000000;
+}
