@@ -1,7 +1,16 @@
 import React from 'react';
-import { Query } from 'react-apollo';
+import { Redirect } from 'react-router-dom';
+import { Query, Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import placeholderUser from './images/placeholder-user.png';
+
+const DELETE_USER = gql`
+  mutation deleteUser($id: ID!){
+    DeleteUser(id: $id) {
+      ID
+    }
+  }
+`;
 
 const User = (props) => (
   <Query
@@ -29,6 +38,22 @@ const User = (props) => (
         <div>
           <img src={imageSrc} alt="Avatar" />
           <div>Login: {data.User.Login}</div>
+          <br />
+          <Mutation mutation={DELETE_USER}>
+            {(deleteUser, { loading, error, data:success }) => {
+              if (success && success.DeleteUser && success.DeleteUser.ID) {
+                return <Redirect to="/" />
+              }
+              return (
+                <button
+                  onClick={() => deleteUser({variables:{ id: data.User.ID}})}
+                  disabled={loading}
+                >
+                  Delete
+                </button>
+              )
+            }}
+          </Mutation>
         </div>
       );
     }}
