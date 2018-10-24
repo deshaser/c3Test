@@ -1,0 +1,33 @@
+.new-user {}
+
+.new-user__title {
+  margin: 10px 0;
+  color: #000000;
+  font-size: 1.3rem;
+}
+
+.new-user__label {
+  width: 100px;
+  display: inline-block;
+}
+
+.new-user__create-button {
+  margin-top: 20px;
+  background-color: #5993de;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.new-user__create-button:hover {
+  background-color: #4b87de;
+}
+
+.new-user__create-button:disabled {
+  background-color: rgba(89, 147, 222, 0.5);
+}

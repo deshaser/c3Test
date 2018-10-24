@@ -5,7 +5,7 @@ import ApolloClient from 'apollo-boost';
 import Layout from './components/Layout/Layout';
 import Users from './components/Users/Users';
 import User from './components/User/User';
-import NewUser from './NewUser';
+import NewUser from './components/NewUser/NewUser';
 
 const client = new ApolloClient({
   uri: 'https://c3interview.danshin.pro/graphql',

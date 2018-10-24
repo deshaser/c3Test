@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 
+import './NewUser.css';
+
 const NewUser = () => (
   <Mutation
     mutation={gql`
@@ -14,8 +16,6 @@ const NewUser = () => (
     `}
   >
     {(createUser, { loading, error, data }) => {
-      if (loading) return <p>Loading...</p>;
-      if (error) return <p>Error :(</p>;
       let login, avatarURL;
 
       if (data && data.CreateUser && data.CreateUser.ID) {
@@ -23,26 +23,36 @@ const NewUser = () => (
       }
 
       return (
-        <form onSubmit={e => {
+        <form className="new-user" onSubmit={e => {
           e.preventDefault();
           createUser({ variables: {
               login: login.value ,
               avatarURL: avatarURL.value ,
             }});
         }}>
+          <div className="new-user__title">
+            New User
+          </div>
+          <label className="new-user__label">Login:</label>
           <input
             type='text'
             ref={ node => login = node }
           />
           <br/>
+          <label className="new-user__label">Avatar URL:</label>
           <input
             type='text'
             ref={ node => avatarURL = node }
           />
           <br/>
-          <button type='submit'>
-            Create new User
+          <button
+            className="new-user__create-button"
+            type='submit'
+            disabled={loading}
+          >
+            { loading ? 'Creating...' : 'Create new User' }
           </button>
+          { error ? 'Something is wrong...' : '' }
         </form>
       );
     }}
