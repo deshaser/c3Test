@@ -5,6 +5,7 @@ import ApolloClient from 'apollo-boost';
 import Layout from './Layout';
 import Users from './Users';
 import User from './User';
+import NewUser from './NewUser';
 
 const client = new ApolloClient({
   uri: 'https://c3interview.danshin.pro/graphql',
@@ -17,6 +18,7 @@ const App = () => (
         <Switch>
           <Route exact path='/' component={ Users } />
           <Route exact path='/user/:userId' component={ User } />
+          <Route exact path='/new' component={ NewUser } />
         </Switch>
       </Layout>
     </BrowserRouter>

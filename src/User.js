@@ -46,7 +46,7 @@ const User = (props) => (
               }
               return (
                 <button
-                  onClick={() => deleteUser({variables:{ id: data.User.ID}})}
+                  onClick={() => deleteUser({ variables: { id: data.User.ID } })}
                   disabled={loading}
                 >
                   Delete
